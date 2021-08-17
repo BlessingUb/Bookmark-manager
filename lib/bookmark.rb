@@ -7,5 +7,8 @@ class Bookmark
       "http://www.destroyallsoftware.com",
       "http://www.google.com"
      ]
-  end
-end
+  end 
+
+end 
+puts Bookmark.new
+puts Bookmark.all
