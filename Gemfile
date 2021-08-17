@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'pg'
 group :development, :test do
   gem 'capybara'
   gem 'rspec'
