@@ -1,25 +1,18 @@
-<<<<<<< HEAD
-require 'pg'
-
-=======
 # in lib/bookmark.rb
 require 'pg'
->>>>>>> 6069bf6 (new commit)
 class Bookmark
 
   def self.all
-<<<<<<< HEAD
-    conn = PG.connect(dbname: 'bookmark_manager')
-    result = conn.exec( 'SELECT * FROM bookmarks')
-    result.map { |bookmarks|  bookmarks['url'] }
-  end
-end
-=======
-    connection = PG.connect(dbname: 'bookmark_manager')
+    if ENV['ENVIRONMENT'] == 'test'
+      connection = PG.connect(dbname: 'bookmark_manager_test')
+    else
+      connection = PG.connect(dbname: 'bookmark_manager')
+    end
+    
     result = connection.exec('SELECT * FROM bookmarks')
     result.map { |bookmark| bookmark['url'] }
   end 
->>>>>>> 6069bf6 (new commit)
+end
 
 # puts Bookmark.new.all
 puts Bookmark.all
