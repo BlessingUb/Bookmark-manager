@@ -2,4 +2,8 @@
   <% @bookmarks.each do |bookmark| %>
     <li><%= bookmark %></li>
   <% end %>
+  <br><br>
+  <form action='/add_bookmarks'>
+  <input type='submit' value='Add a new Bookmark'>
+  </form>
 </ul>
