@@ -13,8 +13,9 @@ describe Bookmark do
   end
 
   it 'should add a new bookmark' do
-    Bookmark.add('http://www.bbc.co.uk')
+    Bookmark.add('BBC','http://www.bbc.co.uk')
     expect(bookmark).to include('http://www.bbc.co.uk')
+    expect(bookmark).to include('BBC')
   end
 
 end
